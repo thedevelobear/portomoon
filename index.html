@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portugal Honeymoon · 15 Jul – 4 Aug 2026</title>
+<meta name="description" content="Three-week Portugal honeymoon itinerary: Lisbon, Algarve, Porto and Madeira — activities, slow days, and what to book ahead.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --tile:#163a63;        /* deep azulejo blue */
+    --tile-bright:#2f6aa6; /* glaze blue */
+    --tile-pale:#e7eef6;   /* washed tile */
+    --glaze:#fbf8f1;       /* warm white glaze */
+    --paper:#f3ede1;       /* warm paper */
+    --gilt:#c2922e;        /* gilt / port-gold */
+    --gilt-deep:#9c7320;
+    --port:#7c2c3b;        /* port wine — urgency */
+    --ink:#1a2230;
+    --ink-soft:#4a5566;
+    --line:#d9d0bf;
+    --radius:14px;
+    --maxw:920px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"DM Sans",system-ui,sans-serif;font-size:17px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--tile-bright);text-underline-offset:3px;}
+  a:hover{color:var(--tile);}
+
+  /* ---------- Hero ---------- */
+  header.hero{
+    position:relative;overflow:hidden;color:var(--glaze);
+    background:
+      linear-gradient(180deg, rgba(13,32,55,.78), rgba(13,32,55,.92)),
+      var(--tile);
+    padding:64px 22px 54px;
+  }
+  /* azulejo tile motif */
+  header.hero::before{
+    content:"";position:absolute;inset:0;opacity:.16;mix-blend-mode:screen;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'><g fill='none' stroke='%23bcd6f0' stroke-width='1.4'><path d='M40 2 L78 40 L40 78 L2 40 Z'/><circle cx='40' cy='40' r='13'/><path d='M40 14 q9 11 0 26 q-9 -15 0 -26 Z'/><path d='M40 66 q9 -11 0 -26 q-9 15 0 26 Z'/><path d='M14 40 q11 9 26 0 q-15 -9 -26 0 Z'/><path d='M66 40 q-11 9 -26 0 q15 -9 26 0 Z'/></g></svg>");
+    background-size:80px 80px;
+  }
+  .hero-inner{position:relative;max-width:var(--maxw);margin:0 auto;}
+  .eyebrow{
+    font-size:.74rem;letter-spacing:.32em;text-transform:uppercase;
+    color:#d7b25f;font-weight:700;margin:0 0 14px;
+  }
+  .hero h1{
+    font-family:"Fraunces",serif;font-weight:500;font-size:clamp(2.6rem,8vw,4.4rem);
+    line-height:1.02;margin:0 0 8px;letter-spacing:-.01em;
+  }
+  .hero h1 em{font-style:italic;color:#e9c876;}
+  .hero .sub{font-size:1.05rem;color:#c6d3e3;margin:0 0 30px;max-width:34ch;}
+
+  /* route ribbon */
+  .route{display:flex;flex-wrap:wrap;gap:6px 4px;align-items:center;font-size:.92rem;}
+  .route .stop{
+    display:inline-flex;align-items:center;gap:8px;padding:7px 13px;
+    background:rgba(255,255,255,.07);border:1px solid rgba(208,225,247,.28);
+    border-radius:999px;color:#eef4fb;font-weight:500;white-space:nowrap;
+  }
+  .route .stop b{color:#e9c876;font-weight:700;}
+  .route .arr{color:#7f9bbd;font-weight:700;padding:0 2px;}
+
+  /* ---------- Sticky nav + progress ---------- */
+  nav.bar{
+    position:sticky;top:0;z-index:30;background:rgba(243,237,225,.92);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+  }
+  .bar-inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;
+    gap:14px;padding:9px 18px;}
+  .bar .pills{display:flex;gap:6px;overflow-x:auto;flex:1;scrollbar-width:none;}
+  .bar .pills::-webkit-scrollbar{display:none;}
+  .bar a.pill{
+    flex:0 0 auto;font-size:.8rem;font-weight:600;text-decoration:none;
+    color:var(--tile);padding:6px 12px;border-radius:999px;border:1px solid transparent;
+    white-space:nowrap;
+  }
+  .bar a.pill:hover{background:var(--tile-pale);}
+  .progress-wrap{display:flex;align-items:center;gap:9px;flex:0 0 auto;}
+  .progress-track{width:80px;height:7px;border-radius:99px;background:var(--line);overflow:hidden;}
+  #progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--gilt),var(--tile-bright));
+    transition:width .35s ease;}
+  #progress-num{font-size:.74rem;font-weight:700;color:var(--ink-soft);min-width:34px;text-align:right;
+    font-variant-numeric:tabular-nums;}
+
+  /* ---------- Layout ---------- */
+  main{max-width:var(--maxw);margin:0 auto;padding:8px 18px 80px;}
+
+  /* rules callout */
+  .callout{
+    margin:30px 0 6px;border:1px solid var(--line);border-left:5px solid var(--gilt);
+    background:var(--glaze);border-radius:var(--radius);padding:18px 20px;
+  }
+  .callout h2{font-family:"Fraunces",serif;font-weight:600;font-size:1.15rem;margin:0 0 10px;
+    display:flex;align-items:center;gap:9px;}
+  .callout ul{margin:0;padding-left:18px;}
+  .callout li{margin:7px 0;color:var(--ink-soft);font-size:.95rem;}
+  .callout li b{color:var(--ink);}
+
+  /* phase */
+  section.phase{margin-top:44px;scroll-margin-top:70px;}
+  .phase-head{display:flex;align-items:baseline;gap:16px;
+    padding-bottom:14px;border-bottom:2px solid var(--tile);margin-bottom:4px;}
+  .phase-num{
+    font-family:"Fraunces",serif;font-style:italic;font-weight:500;
+    font-size:2.2rem;color:var(--gilt);line-height:1;flex:0 0 auto;
+  }
+  .phase-titles{flex:1;}
+  .phase-titles h2{font-family:"Fraunces",serif;font-weight:600;font-size:1.7rem;
+    margin:0;line-height:1.1;letter-spacing:-.01em;}
+  .phase-titles .dates{font-size:.82rem;font-weight:700;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--tile-bright);margin-top:3px;}
+  .phase-blurb{color:var(--ink-soft);font-size:.95rem;margin:12px 0 4px;}
+
+  .group{margin-top:20px;}
+  .group h3{
+    font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;
+    color:var(--ink-soft);margin:0 0 8px;display:flex;align-items:center;gap:8px;
+  }
+  .group h3 .dot{width:8px;height:8px;border-radius:2px;transform:rotate(45deg);background:var(--tile-bright);}
+  .group.book h3 .dot{background:var(--port);}
+  .group.slow h3 .dot{background:var(--gilt);}
+
+  ul.items{list-style:none;margin:0;padding:0;}
+  li.item{display:flex;gap:12px;align-items:flex-start;padding:9px 12px;border-radius:10px;
+    transition:background .15s ease;}
+  li.item:hover{background:var(--glaze);}
+  li.item input{
+    appearance:none;-webkit-appearance:none;flex:0 0 auto;margin:3px 0 0;
+    width:21px;height:21px;border:2px solid var(--tile);border-radius:6px;
+    background:var(--glaze);cursor:pointer;position:relative;transition:all .15s ease;
+  }
+  li.item input:checked{background:var(--tile);border-color:var(--tile);}
+  li.item input:checked::after{
+    content:"";position:absolute;left:6px;top:2px;width:5px;height:10px;
+    border:solid var(--glaze);border-width:0 2.5px 2.5px 0;transform:rotate(43deg);
+  }
+  li.item input:focus-visible{outline:3px solid var(--gilt);outline-offset:2px;}
+  li.item label{cursor:pointer;flex:1;font-size:.97rem;}
+  li.item.done label{color:var(--ink-soft);text-decoration:line-through;text-decoration-color:var(--line);}
+  .tag{display:inline-block;font-size:.64rem;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;padding:2px 7px;border-radius:5px;margin-left:7px;
+    vertical-align:1px;white-space:nowrap;}
+  .tag.book{background:var(--port);color:#fbeef0;}
+  .tag.prio{background:var(--gilt);color:#2a2410;}
+  .note{display:block;font-size:.82rem;color:var(--ink-soft);margin-top:2px;}
+
+  /* booking priority block */
+  .priority{margin-top:46px;background:var(--tile);color:var(--glaze);border-radius:18px;
+    padding:30px 26px;position:relative;overflow:hidden;scroll-margin-top:70px;}
+  .priority::before{content:"";position:absolute;inset:0;opacity:.1;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'><g fill='none' stroke='%23e9c876' stroke-width='1'><path d='M30 3 L57 30 L30 57 L3 30 Z'/><circle cx='30' cy='30' r='9'/></g></svg>");
+    background-size:60px 60px;}
+  .priority > *{position:relative;}
+  .priority h2{font-family:"Fraunces",serif;font-weight:600;font-size:1.5rem;margin:0 0 4px;color:#e9c876;}
+  .priority p.lead{color:#c6d3e3;font-size:.92rem;margin:0 0 16px;}
+  ol.prio-list{margin:0;padding-left:0;list-style:none;counter-reset:p;}
+  ol.prio-list li{counter-increment:p;display:flex;gap:13px;align-items:flex-start;
+    padding:11px 0;border-top:1px solid rgba(208,225,247,.2);}
+  ol.prio-list li::before{content:counter(p);font-family:"Fraunces",serif;font-style:italic;
+    color:#e9c876;font-size:1.2rem;font-weight:500;flex:0 0 24px;line-height:1.3;}
+  ol.prio-list li .pt{flex:1;font-size:.95rem;color:#eef4fb;}
+  ol.prio-list a{color:#bcd6f0;}
+
+  /* logistics + footer */
+  .logistics{margin-top:40px;}
+  footer{max-width:var(--maxw);margin:0 auto;padding:30px 18px 60px;color:var(--ink-soft);
+    font-size:.82rem;border-top:1px solid var(--line);}
+  .reset{margin-top:18px;background:none;border:1px solid var(--line);color:var(--ink-soft);
+    font:inherit;font-size:.82rem;padding:8px 15px;border-radius:8px;cursor:pointer;}
+  .reset:hover{border-color:var(--port);color:var(--port);}
+
+  @media (max-width:560px){
+    body{font-size:16px;}
+    .hero{padding:46px 18px 40px;}
+    .phase-num{font-size:1.7rem;}
+    .phase-titles h2{font-size:1.4rem;}
+    .progress-wrap .progress-track{width:54px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important;scroll-behavior:auto!important;}
+  }
+  @media print{
+    nav.bar,.reset,header.hero::before{display:none;}
+    body{background:#fff;font-size:12px;}
+    li.item input{border-color:#888;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">15 July – 4 August 2026 · from Wrocław</p>
+    <h1>Portugal,<br><em>the long way round.</em></h1>
+    <p class="sub">Three weeks, one open-jaw road trip down and up the coast, then an island. Tick things off as you go.</p>
+    <div class="route">
+      <span class="stop"><b>1</b> Lisbon</span><span class="arr">→</span>
+      <span class="stop"><b>2</b> Lagos</span><span class="arr">→</span>
+      <span class="stop"><b>3</b> Porto</span><span class="arr">✈</span>
+      <span class="stop"><b>4</b> Madeira</span>
+    </div>
+  </div>
+</header>
+
+<nav class="bar">
+  <div class="bar-inner">
+    <div class="pills">
+      <a class="pill" href="#lisbon">Lisbon</a>
+      <a class="pill" href="#sintra">Sintra · Cascais</a>
+      <a class="pill" href="#algarve">Algarve</a>
+      <a class="pill" href="#porto">Porto</a>
+      <a class="pill" href="#madeira">Madeira</a>
+      <a class="pill" href="#priority">Book Now</a>
+    </div>
+    <div class="progress-wrap" title="Your progress">
+      <div class="progress-track"><div id="progress-fill"></div></div>
+      <span id="progress-num">0%</span>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="callout">
+    <h2>🧭 Read first — what changed for 2026</h2>
+    <ul>
+      <li><b>Madeira hikes need paid timed reservations.</b> Every classified PR trail is booked in advance on the official SIMplifica portal (€4.50pp, €10.50 for PR1). Save the ticket offline — no signal in the mountains.</li>
+      <li><b>Benagil Cave is licensed-tour-only.</b> Swimming and self-guided entry have been banned and fined since 2024. Only small boats can get inside.</li>
+      <li><b>Pena Palace is strict timed entry.</b> Interior slots sell out days ahead in summer; the Lisboa Card doesn't cover it.</li>
+    </ul>
+  </div>
+
+  <div id="app"><!-- phases injected here --></div>
+
+  <section class="priority" id="priority">
+    <h2>Book now</h2>
+    <p class="lead">Ordered by how fast they sell out for your dates.</p>
+    <ol class="prio-list">
+      <li><span class="pt"><b>Pena Palace</b> slot — 1–2 months out · <a href="https://www.parquesdesintra.pt/en/plan-your-visit/tickets-palace-of-pena/" target="_blank" rel="noopener">parquesdesintra.pt</a></span></li>
+      <li><span class="pt"><b>Madeira SIMplifica</b> hike slots (PR1, PR6, PR8, PR9) + canyoning + whale watching · <a href="https://simplifica.madeira.gov.pt/" target="_blank" rel="noopener">simplifica.madeira.gov.pt</a></span></li>
+      <li><span class="pt"><b>Benagil</b> boat tour — confirm a small boat · <a href="https://www.getyourguide.com" target="_blank" rel="noopener">GetYourGuide</a></span></li>
+      <li><span class="pt"><b>Douro Valley</b> tour + <b>The Door</b> restaurant</span></li>
+      <li><span class="pt"><b>Jerónimos</b> + <a href="https://regaleira.byblueticket.pt" target="_blank" rel="noopener">Quinta da Regaleira</a> + <a href="https://tickets.livrarialello.pt/en" target="_blank" rel="noopener">Livraria Lello</a> + Fado dinner</span></li>
+      <li><span class="pt"><b>Fajã dos Padres</b> lunch (Madeira)</span></li>
+      <li><span class="pt"><b>Sunset boats</b> — Lisbon Tagus cruise + Lagos catamaran</span></li>
+    </ol>
+  </section>
+
+  <section class="phase logistics" id="logistics">
+    <div class="phase-head">
+      <span class="phase-num">✦</span>
+      <div class="phase-titles"><h2>Logistics still to book</h2><div class="dates">Don't forget</div></div>
+    </div>
+    <ul class="items" data-phase="logistics">
+      <li class="item"><input type="checkbox" id="log-0"><label for="log-0">Open-jaw car rental — Lisbon pickup, Porto drop</label></li>
+      <li class="item"><input type="checkbox" id="log-1"><label for="log-1">Separate Madeira car rental</label></li>
+      <li class="item"><input type="checkbox" id="log-2"><label for="log-2">PKP Intercity train — Warsaw → Wrocław, evening of 4 Aug</label></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Official portals are linked directly (Pena, Regaleira, Lello, SIMplifica). Jerónimos, Benagil, Douro tours and canyoning have no single official site — book via GetYourGuide or directly with the operator. Prices and rules verified for the 2026 season; double-check before paying.</p>
+  <p>Your ticked items are saved in this browser only. <button class="reset" id="reset">Clear all checkmarks</button></p>
+</footer>
+
+<script>
+const data = [
+  {
+    id:"lisbon", num:"1", title:"Lisbon", dates:"15 – 19 Jul",
+    blurb:"Hilltop viewpoints, trams and tiles — with Sintra and Cascais on day trips.",
+    groups:[
+      {kind:"do", label:"Must-do", items:[
+        {t:"Wander Alfama at golden hour"},
+        {t:"Miradouros: Senhora do Monte & Portas do Sol"},
+        {t:"Tram 28 — ride early to beat the crowds"},
+        {t:"Belém — Jerónimos Monastery + pastel de nata at Pastéis de Belém"},
+        {t:"Fado dinner in Alfama or Mouraria", book:true, note:"Reserve a table directly with the venue."},
+        {t:"LX Factory + Time Out Market"},
+      ]},
+      {kind:"slow", label:"Slow down", items:[
+        {t:"Sunset sailboat on the Tagus — a drink in hand, bridge lit up", book:true, note:"Books up at sunset in summer."},
+        {t:"Kiosk sundowner at Miradouro de Santa Catarina (Adamastor)"},
+        {t:"Ginjinha at A Ginjinha by Rossio — cherry liqueur, 60 seconds"},
+        {t:"Jardim da Estrela — leafy local park at the end of the tram 28 line"},
+        {t:"Jardim do Príncipe Real — kiosk drink under the giant juniper"},
+        {t:"Coffee at Fábrica Coffee Roasters or Copenhagen Coffee Lab"},
+        {t:"Lazy beach afternoon at Costa da Caparica"},
+      ]},
+      {kind:"book", label:"Book ahead", items:[
+        {t:"Jerónimos Monastery timed entry", link:"https://www.getyourguide.com", linkText:"GetYourGuide", note:"Draws 2M+ visitors a year; lines run for hours."},
+        {t:"Fado dinner table"},
+        {t:"Sunset Tagus cruise"},
+      ]},
+    ]
+  },
+  {
+    id:"sintra", num:"·", title:"Sintra & Cascais", dates:"Day trips from Lisbon",
+    blurb:"A fairytale palace, a mystic garden, and an easy coast to balance it out.",
+    groups:[
+      {kind:"do", label:"Must-do", items:[
+        {t:"Palácio da Pena — the fairytale headliner", book:true},
+        {t:"Quinta da Regaleira — the Initiation Well & gardens", book:true},
+        {t:"Cabo da Roca & Monserrate (with the car)"},
+      ]},
+      {kind:"slow", label:"Slow down", items:[
+        {t:"Cascais seafront + Boca do Inferno — flat coastal stroll; rent bikes toward Guincho"},
+        {t:"Praia da Rainha — small cove in Cascais town for a no-plan swim"},
+      ]},
+      {kind:"book", label:"Book ahead — high priority", items:[
+        {t:"Pena Palace timed slot — book 1–2 months out; 30-min entry; free reschedule within a year", link:"https://www.parquesdesintra.pt/en/plan-your-visit/tickets-palace-of-pena/", linkText:"parquesdesintra.pt"},
+        {t:"Quinta da Regaleira — sells out; same-day slots can be hours away", link:"https://regaleira.byblueticket.pt", linkText:"official ticket office"},
+      ]},
+    ]
+  },
+  {
+    id:"algarve", num:"2", title:"Algarve · Lagos", dates:"19 – 25 Jul",
+    blurb:"Cliff arches, hidden coves and the end of Europe at Sagres.",
+    groups:[
+      {kind:"do", label:"Must-do", items:[
+        {t:"Ponta da Piedade cliff arches by small boat or kayak (sunset)"},
+        {t:"Beaches: Praia Dona Ana & Praia do Camilo"},
+        {t:"Seven Hanging Valleys Trail (Sete Vales Suspensos)"},
+        {t:"Cabo de São Vicente sunset, Sagres — the end of Europe"},
+        {t:"Benagil Cave tour — small boat only", book:true},
+      ]},
+      {kind:"slow", label:"Slow down", items:[
+        {t:"Sunset catamaran with drinks — music, swim stop, sundowners", book:true},
+        {t:"Clifftop sundowner at Sagres — wild and quiet"},
+        {t:"Meia Praia — long sandy beach for a lazy day"},
+        {t:"Beach-bar afternoon — a lounger at Praia do Camilo or a Meia Praia club"},
+        {t:"Coffee at The Studio Coffee Roaster or Black + White"},
+      ]},
+      {kind:"book", label:"Book ahead", items:[
+        {t:"Benagil Cave tour — sells out days ahead in Jul/Aug; confirm a small boat", link:"https://www.getyourguide.com", linkText:"GetYourGuide"},
+        {t:"Private/sunset boat (Ponta da Piedade + caves) — book direct with a Lagos operator"},
+      ]},
+    ]
+  },
+  {
+    id:"porto", num:"3", title:"Porto", dates:"25 – 29 Jul",
+    blurb:"Port lodges, tiled façades and the Douro at sunset.",
+    groups:[
+      {kind:"do", label:"Must-do", items:[
+        {t:"Port cellars in Vila Nova de Gaia — Graham's / Taylor's", book:true, note:"Book premium tastings direct on each cellar's site."},
+        {t:"Douro Valley day trip — wineries + lunch + river cruise", book:true},
+        {t:"Livraria Lello bookshop", book:true},
+        {t:"Ribeira riverfront, Clérigos Tower, São Bento tiles"},
+        {t:"The Door restaurant", book:true, note:"Reserve early, direct with the restaurant."},
+      ]},
+      {kind:"slow", label:"Slow down", items:[
+        {t:"Jardins do Palácio de Cristal — locals' favourite; peacocks, river views, lakeside café"},
+        {t:"Jardim do Morro (Gaia) — hilltop sunset over the Douro & Dom Luís I bridge"},
+        {t:"Vintage Tram 1 to Foz — slow river ride to the Atlantic; walk the promenade"},
+        {t:"Riverside sundowner in Gaia — a glass of port at Sala de Prova"},
+        {t:"Matosinhos seafood lunch — grilled fish by the sea, then a flat beach"},
+        {t:"Coffee at C'alma or 7g Roaster"},
+      ]},
+      {kind:"book", label:"Book ahead", items:[
+        {t:"Douro Valley tour", link:"https://www.getyourguide.com", linkText:"GetYourGuide Porto"},
+        {t:"Livraria Lello (€10 voucher, redeemable against a book)", link:"https://tickets.livrarialello.pt/en", linkText:"tickets.livrarialello.pt"},
+        {t:"The Door — reserve early, direct"},
+      ]},
+    ]
+  },
+  {
+    id:"madeira", num:"4", title:"Madeira", dates:"29 Jul – 4 Aug",
+    blurb:"Sunrise ridges, levada waterfalls and an Atlantic island that earns the flight.",
+    groups:[
+      {kind:"do", label:"Must-do — hikes", items:[
+        {t:"PR1 Pico do Areeiro → Pico Ruivo (sunrise) — one-way only; book Areeiro parking early", book:true},
+        {t:"PR9 Levada do Caldeirão Verde — easy, ends at a waterfall", book:true},
+        {t:"PR6 Levada das 25 Fontes / Rabaçal", book:true},
+        {t:"PR8 Ponta de São Lourenço — volcanic peninsula", book:true},
+      ]},
+      {kind:"do", label:"Must-do — other", items:[
+        {t:"Canyoning in the Laurissilva forest (EPIC Madeira)", book:true, note:"Book direct; small-group spots fill fast."},
+        {t:"Whale / dolphin watching boat from Funchal or Calheta", book:true},
+        {t:"Cabo Girão skywalk"},
+        {t:"Porto Moniz natural lava pools"},
+        {t:"Fanal forest — misty laurel woods"},
+      ]},
+      {kind:"slow", label:"Slow down", items:[
+        {t:"Fajã dos Padres — cliff cable car down to a calm swim + lunch with local wine", book:true, note:"Reserve lunch in summer."},
+        {t:"Cable car to Monte + Monte Palace gardens, wicker toboggan back down"},
+        {t:"Parque de Santa Catarina (Funchal) — lake, swans, bay views; wine at the in-park café"},
+        {t:"Ponta do Sol seafront — sunny and laid-back, right by your base"},
+        {t:"Sea-bathing at the Lido / Doca do Cavacas — ocean pools, no hike"},
+        {t:"Poncha at a rustic bar in Câmara de Lobos"},
+      ]},
+      {kind:"book", label:"Book ahead", items:[
+        {t:"All PR hike slots — 30-min slot per trail; save offline", link:"https://simplifica.madeira.gov.pt/", linkText:"simplifica.madeira.gov.pt"},
+        {t:"Canyoning — book direct with EPIC Madeira"},
+        {t:"Whale watching", link:"https://www.getyourguide.com/madeira-l67/", linkText:"GetYourGuide Madeira"},
+        {t:"Fajã dos Padres lunch reservation"},
+      ]},
+    ]
+  },
+];
+
+const groupMeta = {
+  do:{cls:"", label:"Must-do"},
+  slow:{cls:"slow", label:"Slow down"},
+  book:{cls:"book", label:"Book ahead"},
+};
+
+const app = document.getElementById("app");
+
+data.forEach(phase=>{
+  const sec = document.createElement("section");
+  sec.className = "phase"; sec.id = phase.id;
+  let html = `<div class="phase-head">
+      <span class="phase-num">${phase.num}</span>
+      <div class="phase-titles"><h2>${phase.title}</h2><div class="dates">${phase.dates}</div></div>
+    </div>
+    <p class="phase-blurb">${phase.blurb}</p>`;
+  phase.groups.forEach((g,gi)=>{
+    const meta = groupMeta[g.kind];
+    html += `<div class="group ${meta.cls}"><h3><span class="dot"></span>${g.label}</h3><ul class="items">`;
+    g.items.forEach((it,ii)=>{
+      const id = `${phase.id}-${gi}-${ii}`;
+      let labelHtml = it.t;
+      if(it.link) labelHtml += ` — <a href="${it.link}" target="_blank" rel="noopener">${it.linkText||"book"}</a>`;
+      if(it.book) labelHtml += `<span class="tag book">Book ahead</span>`;
+      if(it.note) labelHtml += `<span class="note">${it.note}</span>`;
+      html += `<li class="item"><input type="checkbox" id="${id}"><label for="${id}">${labelHtml}</label></li>`;
+    });
+    html += `</ul></div>`;
+  });
+  sec.innerHTML = html;
+  app.appendChild(sec);
+});
+
+// ---- persistence + progress ----
+const KEY = "pt-honeymoon-2026";
+let saved = {};
+try { saved = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch(e){ saved = {}; }
+
+const boxes = Array.from(document.querySelectorAll('input[type=checkbox]'));
+const fill = document.getElementById("progress-fill");
+const num = document.getElementById("progress-num");
+
+function syncRow(box){
+  box.closest(".item").classList.toggle("done", box.checked);
+}
+function persist(){
+  const state = {};
+  boxes.forEach(b=>{ if(b.checked) state[b.id]=1; });
+  try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){}
+}
+function updateProgress(){
+  const done = boxes.filter(b=>b.checked).length;
+  const pct = boxes.length ? Math.round(done/boxes.length*100) : 0;
+  fill.style.width = pct+"%";
+  num.textContent = pct+"%";
+}
+
+boxes.forEach(b=>{
+  if(saved[b.id]) b.checked = true;
+  syncRow(b);
+  b.addEventListener("change", ()=>{ syncRow(b); persist(); updateProgress(); });
+});
+updateProgress();
+
+document.getElementById("reset").addEventListener("click", ()=>{
+  boxes.forEach(b=>{ b.checked=false; syncRow(b); });
+  try{ localStorage.removeItem(KEY); }catch(e){}
+  updateProgress();
+});
+</script>
+</body>
+</html>
