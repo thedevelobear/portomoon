@@ -153,6 +153,24 @@
   .tag.book{background:var(--port);color:#fbeef0;}
   .tag.prio{background:var(--gilt);color:#2a2410;}
   .note{display:block;font-size:.82rem;color:var(--ink-soft);margin-top:2px;}
+  .tag.booked{background:#2e7d52;color:#eafff3;}
+  .when{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.04em;
+    color:var(--port);background:#f6e7ea;padding:2px 7px;border-radius:5px;margin-left:6px;vertical-align:1px;white-space:nowrap;}
+
+  /* where you're staying */
+  .stay{margin-top:20px;border:1px solid var(--line);border-left:5px solid #2e7d52;
+    background:var(--glaze);border-radius:12px;padding:14px 16px;
+    display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;}
+  .stay-label{width:100%;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
+    font-weight:700;color:var(--ink-soft);display:flex;align-items:center;gap:8px;}
+  .stay-body{flex:1;min-width:200px;}
+  .stay-name{font-weight:700;color:var(--ink);}
+  .stay-meta{display:block;font-size:.86rem;color:var(--ink-soft);margin-top:2px;}
+  .stay-price{font-weight:700;color:var(--tile);font-variant-numeric:tabular-nums;font-size:1.05rem;}
+  .status{font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    padding:2px 8px;border-radius:5px;}
+  .status.paid{background:#2e7d52;color:#eafff3;}
+  .status.due{background:var(--gilt);color:#2a2410;}
 
   /* booking priority block */
   .priority{margin-top:46px;background:var(--tile);color:var(--glaze);border-radius:18px;
@@ -205,9 +223,11 @@
     <p class="sub">Three weeks, one open-jaw road trip down and up the coast, then an island. Tick things off as you go.</p>
     <div class="route">
       <span class="stop"><b>1</b> Lisbon</span><span class="arr">→</span>
-      <span class="stop"><b>2</b> Lagos</span><span class="arr">→</span>
-      <span class="stop"><b>3</b> Porto</span><span class="arr">✈</span>
-      <span class="stop"><b>4</b> Madeira</span>
+      <span class="stop"><b>2</b> Colares</span><span class="arr">→</span>
+      <span class="stop"><b>3</b> Lagos</span><span class="arr">→</span>
+      <span class="stop"><b>4</b> Coimbra</span><span class="arr">→</span>
+      <span class="stop"><b>5</b> Porto</span><span class="arr">✈</span>
+      <span class="stop"><b>6</b> Madeira</span>
     </div>
   </div>
 </header>
@@ -216,8 +236,9 @@
   <div class="bar-inner">
     <div class="pills">
       <a class="pill" href="#lisbon">Lisbon</a>
-      <a class="pill" href="#sintra">Sintra · Cascais</a>
+      <a class="pill" href="#sintra">Sintra · Colares</a>
       <a class="pill" href="#algarve">Algarve</a>
+      <a class="pill" href="#coimbra">Coimbra</a>
       <a class="pill" href="#porto">Porto</a>
       <a class="pill" href="#madeira">Madeira</a>
       <a class="pill" href="#priority">Book Now</a>
@@ -239,17 +260,27 @@
     </ul>
   </div>
 
+  <div class="callout" style="border-left-color:var(--tile-bright)">
+    <h2>✈️ Flights &amp; travel days</h2>
+    <ul>
+      <li><b>Wed 15 Jul · Wrocław → Lisbon</b> — 08:10–11:10, Ryanair · 1378 PLN. <b>Online check-in</b> opens 15 May; closes 2 h before departure.</li>
+      <li><b>Wed 29 Jul · Porto → Madeira</b> — 12:10–14:15, easyJet · 1281 PLN. Check-in opens 30 days out; closes 2 h before.</li>
+      <li><b>Tue 4 Aug · Madeira → Warsaw</b> — 04:05–12:05, TAP Portugal · 1606 PLN. Check in via flyTAP / TAP App, up to 36 h before (non-US flights).</li>
+      <li><b>Return train</b> — Warsaw → Wrocław, 4 Aug: ~15:33 from Warszawa Zachodnia or 15:28 from Centralna.</li>
+    </ul>
+  </div>
+
   <div id="app"><!-- phases injected here --></div>
 
   <section class="priority" id="priority">
     <h2>Book now</h2>
-    <p class="lead">Ordered by how fast they sell out for your dates.</p>
+    <p class="lead">Ordered by how fast they sell out — <span class="status paid">Booked</span> items are already locked in.</p>
     <ol class="prio-list">
-      <li><span class="pt"><b>Pena Palace</b> slot — 1–2 months out · <a href="https://www.parquesdesintra.pt/en/plan-your-visit/tickets-palace-of-pena/" target="_blank" rel="noopener">parquesdesintra.pt</a></span></li>
+      <li><span class="pt"><b>Pena Palace</b> slot <span class="status paid">Booked 19 Jul · 10:30</span></span></li>
       <li><span class="pt"><b>Madeira SIMplifica</b> hike slots (PR1, PR6, PR8, PR9) + canyoning + whale watching · <a href="https://simplifica.madeira.gov.pt/" target="_blank" rel="noopener">simplifica.madeira.gov.pt</a></span></li>
-      <li><span class="pt"><b>Benagil</b> boat tour — confirm a small boat · <a href="https://www.getyourguide.com" target="_blank" rel="noopener">GetYourGuide</a></span></li>
-      <li><span class="pt"><b>Douro Valley</b> tour + <b>The Door</b> restaurant</span></li>
-      <li><span class="pt"><b>Jerónimos</b> + <a href="https://regaleira.byblueticket.pt" target="_blank" rel="noopener">Quinta da Regaleira</a> + <a href="https://tickets.livrarialello.pt/en" target="_blank" rel="noopener">Livraria Lello</a> + Fado dinner</span></li>
+      <li><span class="pt"><b>Benagil</b> + dolphins boat tour <span class="status paid">Booked 21 Jul · 11:30</span></span></li>
+      <li><span class="pt"><b>Douro Valley</b> tour — still to book · <b>The Door</b> restaurant <span class="status paid">Booked 18:00</span></span></li>
+      <li><span class="pt"><b>Jerónimos</b> <span class="status paid">Booked 17 Jul</span> + <b>Quinta da Regaleira</b> <span class="status paid">Booked 19 Jul</span> + <a href="https://tickets.livrarialello.pt/en" target="_blank" rel="noopener">Livraria Lello</a> + Fado dinner — still to book</span></li>
       <li><span class="pt"><b>Fajã dos Padres</b> lunch (Madeira)</span></li>
       <li><span class="pt"><b>Sunset boats</b> — Lisbon Tagus cruise + Lagos catamaran</span></li>
     </ol>
@@ -258,13 +289,22 @@
   <section class="phase logistics" id="logistics">
     <div class="phase-head">
       <span class="phase-num">✦</span>
-      <div class="phase-titles"><h2>Logistics still to book</h2><div class="dates">Don't forget</div></div>
+      <div class="phase-titles"><h2>Cars &amp; transport</h2><div class="dates">Mostly sorted</div></div>
     </div>
     <ul class="items" data-phase="logistics">
-      <li class="item"><input type="checkbox" id="log-0"><label for="log-0">Open-jaw car rental — Lisbon pickup, Porto drop</label></li>
-      <li class="item"><input type="checkbox" id="log-1"><label for="log-1">Separate Madeira car rental</label></li>
-      <li class="item"><input type="checkbox" id="log-2"><label for="log-2">PKP Intercity train — Warsaw → Wrocław, evening of 4 Aug</label></li>
+      <li class="item"><input type="checkbox" id="log-0"><label for="log-0">Portugal car — Lisbon pickup → Porto drop <span class="when">16 – 29 Jul</span><span class="tag booked">Booked</span><span class="note">~2800 PLN — pay on pickup.</span></label></li>
+      <li class="item"><input type="checkbox" id="log-1"><label for="log-1">Madeira car — separate island rental <span class="when">29 Jul – 4 Aug</span><span class="tag booked">Booked</span><span class="note">~1500 PLN — paid.</span></label></li>
+      <li class="item"><input type="checkbox" id="log-2"><label for="log-2">PKP Intercity train — Warsaw → Wrocław, 4 Aug <span class="note">~15:33 from Warszawa Zachodnia or 15:28 from Centralna.</span></label></li>
     </ul>
+
+    <div class="callout" style="border-left-color:var(--gilt)">
+      <h2>💰 Budget so far</h2>
+      <ul>
+        <li><b>Flights</b> — 4 459 PLN</li>
+        <li><b>Accommodation</b> — ~13 400 PLN total</li>
+        <li><b>Cars</b> — Madeira ~1 500 + Portugal ~2 800 = ~4 350 PLN</li>
+      </ul>
+    </div>
   </section>
 </main>
 
@@ -276,14 +316,15 @@
 <script>
 const data = [
   {
-    id:"lisbon", num:"1", title:"Lisbon", dates:"15 – 19 Jul",
-    blurb:"Hilltop viewpoints, trams and tiles — with Sintra and Cascais on day trips.",
+    id:"lisbon", num:"1", title:"Lisbon", dates:"15 – 18 Jul · 3 nights",
+    blurb:"Hilltop viewpoints, trams and tiles. Fly in Wed 15 Jul; pick up the Portugal car on the 16th.",
+    hotel:{name:"Locke Room", meta:"15–18 Jul · 3 nights · early check-in from 14:00", price:"€438", paid:true},
     groups:[
       {kind:"do", label:"Must-do", items:[
         {t:"Wander Alfama at golden hour"},
         {t:"Miradouros: Senhora do Monte & Portas do Sol"},
         {t:"Tram 28 — ride early to beat the crowds"},
-        {t:"Belém — Jerónimos Monastery + pastel de nata at Pastéis de Belém"},
+        {t:"Belém — Jerónimos Monastery + pastel de nata at Pastéis de Belém", booked:true, when:"17 Jul · 12:30"},
         {t:"Fado dinner in Alfama or Mouraria", book:true, note:"Reserve a table directly with the venue."},
         {t:"LX Factory + Time Out Market"},
       ]},
@@ -297,41 +338,43 @@ const data = [
         {t:"Lazy beach afternoon at Costa da Caparica"},
       ]},
       {kind:"book", label:"Book ahead", items:[
-        {t:"Jerónimos Monastery timed entry", link:"https://www.getyourguide.com", linkText:"GetYourGuide", note:"Draws 2M+ visitors a year; lines run for hours."},
+        {t:"Jerónimos Monastery timed entry", booked:true, when:"17 Jul · 12:30", note:"Paid — booked for 17 Jul."},
         {t:"Fado dinner table"},
         {t:"Sunset Tagus cruise"},
       ]},
     ]
   },
   {
-    id:"sintra", num:"·", title:"Sintra & Cascais", dates:"Day trips from Lisbon",
-    blurb:"A fairytale palace, a mystic garden, and an easy coast to balance it out.",
+    id:"sintra", num:"2", title:"Sintra & Cascais", dates:"18 – 20 Jul · 2 nights",
+    blurb:"A fairytale palace, a mystic garden, and an easy coast to balance it out. Based in Colares — Sintra day is the 19th.",
+    hotel:{name:"Private room with bathroom, Colares", meta:"18–20 Jul · 2 nights · host Wiltavivacs", paid:false, due:"Pay in July"},
     groups:[
       {kind:"do", label:"Must-do", items:[
-        {t:"Palácio da Pena — the fairytale headliner", book:true},
-        {t:"Quinta da Regaleira — the Initiation Well & gardens", book:true},
+        {t:"Palácio da Pena — the fairytale headliner", booked:true, when:"19 Jul · 10:30"},
+        {t:"Quinta da Regaleira — the Initiation Well & gardens", booked:true, when:"19 Jul · 14:30"},
         {t:"Cabo da Roca & Monserrate (with the car)"},
       ]},
       {kind:"slow", label:"Slow down", items:[
         {t:"Cascais seafront + Boca do Inferno — flat coastal stroll; rent bikes toward Guincho"},
         {t:"Praia da Rainha — small cove in Cascais town for a no-plan swim"},
       ]},
-      {kind:"book", label:"Book ahead — high priority", items:[
-        {t:"Pena Palace timed slot — book 1–2 months out; 30-min entry; free reschedule within a year", link:"https://www.parquesdesintra.pt/en/plan-your-visit/tickets-palace-of-pena/", linkText:"parquesdesintra.pt"},
-        {t:"Quinta da Regaleira — sells out; same-day slots can be hours away", link:"https://regaleira.byblueticket.pt", linkText:"official ticket office"},
+      {kind:"book", label:"Booked", items:[
+        {t:"Pena Palace timed slot — 30-min entry", booked:true, when:"19 Jul · 10:30", note:"Paid."},
+        {t:"Quinta da Regaleira", booked:true, when:"19 Jul · 14:30", note:"Paid."},
       ]},
     ]
   },
   {
-    id:"algarve", num:"2", title:"Algarve · Lagos", dates:"19 – 25 Jul",
-    blurb:"Cliff arches, hidden coves and the end of Europe at Sagres.",
+    id:"algarve", num:"3", title:"Algarve · Lagos", dates:"20 – 24 Jul · 4 nights",
+    blurb:"Cliff arches, hidden coves and the end of Europe at Sagres. Based in a townhouse in Budens.",
+    hotel:{name:"Townhouse in Budens", meta:"20–24 Jul · 4 nights", paid:false, due:"Pay in July"},
     groups:[
       {kind:"do", label:"Must-do", items:[
         {t:"Ponta da Piedade cliff arches by small boat or kayak (sunset)"},
         {t:"Beaches: Praia Dona Ana & Praia do Camilo"},
         {t:"Seven Hanging Valleys Trail (Sete Vales Suspensos)"},
         {t:"Cabo de São Vicente sunset, Sagres — the end of Europe"},
-        {t:"Benagil Cave tour — small boat only", book:true},
+        {t:"Benagil Cave + dolphin watching tour — small boat", booked:true, when:"21 Jul · 11:30", note:"Paid (~375 zł); reconfirm ~24 h before."},
       ]},
       {kind:"slow", label:"Slow down", items:[
         {t:"Sunset catamaran with drinks — music, swim stop, sundowners", book:true},
@@ -340,22 +383,38 @@ const data = [
         {t:"Beach-bar afternoon — a lounger at Praia do Camilo or a Meia Praia club"},
         {t:"Coffee at The Studio Coffee Roaster or Black + White"},
       ]},
-      {kind:"book", label:"Book ahead", items:[
-        {t:"Benagil Cave tour — sells out days ahead in Jul/Aug; confirm a small boat", link:"https://www.getyourguide.com", linkText:"GetYourGuide"},
-        {t:"Private/sunset boat (Ponta da Piedade + caves) — book direct with a Lagos operator"},
+      {kind:"book", label:"Booked & still to book", items:[
+        {t:"Benagil Cave + dolphins tour", booked:true, when:"21 Jul · 11:30", note:"Paid (~375 zł); reconfirm ~24 h before."},
+        {t:"Sunset catamaran with drinks — book direct with a Lagos operator", book:true},
       ]},
     ]
   },
   {
-    id:"porto", num:"3", title:"Porto", dates:"25 – 29 Jul",
-    blurb:"Port lodges, tiled façades and the Douro at sunset.",
+    id:"coimbra", num:"4", title:"Coimbra", dates:"24 – 25 Jul · 1 night",
+    blurb:"A one-night stop on the drive north — Portugal's ancient university city.",
+    hotel:{name:"Hotel Coimbra Aeminium, Affiliated by Meliá", meta:"24–25 Jul · 1 night · standard room", price:"526 zł", paid:true},
+    groups:[
+      {kind:"do", label:"Must-do", items:[
+        {t:"University of Coimbra & the Joanina Library — baroque jewel"},
+        {t:"Wander the old town up to the Sé Velha (old cathedral)"},
+      ]},
+      {kind:"slow", label:"Slow down", items:[
+        {t:"Riverside walk along the Mondego at dusk"},
+        {t:"Coffee and a Santa Clara pastry before the drive to Porto"},
+      ]},
+    ]
+  },
+  {
+    id:"porto", num:"5", title:"Porto", dates:"25 – 29 Jul · 4 nights",
+    blurb:"Port lodges, tiled façades and the Douro at sunset. Drop the Portugal car here on the 29th, then fly to Madeira.",
+    hotel:{name:"Tripas-Coração, Almada Charming City Centre", meta:"25–29 Jul · 4 nights · city centre", price:"2 455 zł", paid:true},
     groups:[
       {kind:"do", label:"Must-do", items:[
         {t:"Port cellars in Vila Nova de Gaia — Graham's / Taylor's", book:true, note:"Book premium tastings direct on each cellar's site."},
         {t:"Douro Valley day trip — wineries + lunch + river cruise", book:true},
         {t:"Livraria Lello bookshop", book:true},
         {t:"Ribeira riverfront, Clérigos Tower, São Bento tiles"},
-        {t:"The Door restaurant", book:true, note:"Reserve early, direct with the restaurant."},
+        {t:"The Door restaurant", booked:true, when:"18:00", note:"Reservation confirmed."},
       ]},
       {kind:"slow", label:"Slow down", items:[
         {t:"Jardins do Palácio de Cristal — locals' favourite; peacocks, river views, lakeside café"},
@@ -368,13 +427,14 @@ const data = [
       {kind:"book", label:"Book ahead", items:[
         {t:"Douro Valley tour", link:"https://www.getyourguide.com", linkText:"GetYourGuide Porto"},
         {t:"Livraria Lello (€10 voucher, redeemable against a book)", link:"https://tickets.livrarialello.pt/en", linkText:"tickets.livrarialello.pt"},
-        {t:"The Door — reserve early, direct"},
+        {t:"The Door", booked:true, when:"18:00", note:"Reservation confirmed."},
       ]},
     ]
   },
   {
-    id:"madeira", num:"4", title:"Madeira", dates:"29 Jul – 4 Aug",
-    blurb:"Sunrise ridges, levada waterfalls and an Atlantic island that earns the flight.",
+    id:"madeira", num:"6", title:"Madeira", dates:"29 Jul – 4 Aug · 6 nights",
+    blurb:"Sunrise ridges, levada waterfalls and an Atlantic island that earns the flight. Separate island car for all 6 days; fly home from Funchal early on 4 Aug.",
+    hotel:{name:"Ponta do Sol — island base", meta:"29 Jul – 4 Aug · 6 nights · breakfast included", paid:true},
     groups:[
       {kind:"do", label:"Must-do — hikes", items:[
         {t:"PR1 Pico do Areeiro → Pico Ruivo (sunrise) — one-way only; book Areeiro parking early", book:true},
@@ -403,6 +463,11 @@ const data = [
         {t:"Whale watching", link:"https://www.getyourguide.com/madeira-l67/", linkText:"GetYourGuide Madeira"},
         {t:"Fajã dos Padres lunch reservation"},
       ]},
+      {kind:"slow", label:"Good to know — driving the island", items:[
+        {t:"Hike planning — Earth Trekkers' best hikes in Madeira", link:"https://www.earthtrekkers.com/best-hikes-in-madeira/", linkText:"earthtrekkers.com"},
+        {t:"Driving on Madeira — roads & tips guide", link:"https://olamadera.pl/blog/jazda-po-maderze-przewodnik-po-drogach-madery/", linkText:"olamadera.pl"},
+        {t:"Parking on Madeira — lines, prices & rules", link:"https://olamadera.pl/blog/jazda-po-maderze-jak-parkowac-kompletny-przewodnik-po-jednych-linii-cenach-i-zasadach/", linkText:"olamadera.pl"},
+      ]},
     ]
   },
 ];
@@ -423,14 +488,28 @@ data.forEach(phase=>{
       <div class="phase-titles"><h2>${phase.title}</h2><div class="dates">${phase.dates}</div></div>
     </div>
     <p class="phase-blurb">${phase.blurb}</p>`;
+  if(phase.hotel){
+    const h = phase.hotel;
+    const st = h.paid
+      ? `<span class="status paid">Paid</span>`
+      : `<span class="status due">${h.due || "Pay later"}</span>`;
+    html += `<div class="stay">
+        <span class="stay-label">🛏 Where you're staying ${st}</span>
+        <div class="stay-body"><span class="stay-name">${h.name}</span>
+        <span class="stay-meta">${h.meta}</span></div>
+        ${h.price ? `<span class="stay-price">${h.price}</span>` : ""}
+      </div>`;
+  }
   phase.groups.forEach((g,gi)=>{
     const meta = groupMeta[g.kind];
     html += `<div class="group ${meta.cls}"><h3><span class="dot"></span>${g.label}</h3><ul class="items">`;
     g.items.forEach((it,ii)=>{
       const id = `${phase.id}-${gi}-${ii}`;
       let labelHtml = it.t;
+      if(it.when) labelHtml += ` <span class="when">${it.when}</span>`;
       if(it.link) labelHtml += ` — <a href="${it.link}" target="_blank" rel="noopener">${it.linkText||"book"}</a>`;
-      if(it.book) labelHtml += `<span class="tag book">Book ahead</span>`;
+      if(it.booked) labelHtml += `<span class="tag booked">Booked</span>`;
+      else if(it.book) labelHtml += `<span class="tag book">Book ahead</span>`;
       if(it.note) labelHtml += `<span class="note">${it.note}</span>`;
       html += `<li class="item"><input type="checkbox" id="${id}"><label for="${id}">${labelHtml}</label></li>`;
     });
